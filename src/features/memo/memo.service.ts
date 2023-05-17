@@ -56,6 +56,14 @@ export class MemoService {
     await this.memoRepo.remove(memo);
   }
 
+  async getMemoStats(id: number) {
+    const memo = await this.memoRepo.findOneBy({ id: id });
+    if (!memo) {
+      throw new MemoNotFoundException('Not found the memo');
+    }
+    return memo;
+  }
+
   async findMemoList(dto: FindMemosDto) {
     let query = this.memoRepo
       .createQueryBuilder('memo')

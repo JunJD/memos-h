@@ -11,7 +11,7 @@ import { FileService } from './file.service';
 @Module({})
 export class FileModule {
   static forRoot(): DynamicModule {
-    const storage = multer.diskStorage({
+    multer.diskStorage({
       destination: function (req, file, cb) {
         cb(
           null,

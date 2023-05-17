@@ -30,6 +30,7 @@ export class FileService {
         destination: rawFile?.destination,
       });
     }
+    console.log(rawFile.originalname);
     Object.assign(existFile, {
       ...existFile,
       creatorId: user,

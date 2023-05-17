@@ -44,7 +44,6 @@ export class FileController {
     @UploadedFile() file: Express.Multer.File,
     @SessionUser() user: User,
   ) {
-    console.log(user);
     return await this.fileService.createFile(user, file);
   }
 

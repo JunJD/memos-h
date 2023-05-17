@@ -1,4 +1,4 @@
-import { Controller, Get, Post, UseInterceptors } from '@nestjs/common';
+import { Controller, Get, UseInterceptors } from '@nestjs/common';
 import { TransformInterceptor } from 'src/common/transform.interceptor';
 import { MemosService } from './memos.service';
 

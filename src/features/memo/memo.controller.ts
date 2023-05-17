@@ -45,6 +45,12 @@ export class MemoController {
   }
 
   @UseGuards(SessionGuard)
+  @Get('/:id')
+  async getMemoStats(@Param('id') id: number) {
+    return await this.memoService.getMemoStats(id);
+  }
+
+  @UseGuards(SessionGuard)
   @Get()
   async getMemoList(@Query() dto: FindMemosDto, @SessionUser() user: User) {
     const visibilityList: Visibility[] = [];

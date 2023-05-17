@@ -39,8 +39,8 @@ export class AuthController {
     };
   }
 
-  @Post('/logout')
-  @Get('/logout')
+  @Post('/signout')
+  // @Get('/logout')
   logout(@Request() req): any {
     req.session.destroy();
     return 'The user session has ended';
