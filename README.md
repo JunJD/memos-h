@@ -28,9 +28,9 @@ $ npm install
 
 ```bash
 # host name
-MEMOS_NAME=mahoo12138
+MEMOS_NAME=dingjunjie12138
 # host email
-MEMOS_EMAIL=mahoo12138@qq.com
+MEMOS_EMAIL=dingjunjie12138@qq.com
 # host password
 MEMOS_PASSWD=password
 

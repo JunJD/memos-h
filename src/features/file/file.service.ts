@@ -14,7 +14,7 @@ export class FileService {
     @InjectRepository(File, 'memos') private fileRepo: Repository<File>,
   ) {}
   async createFile(user: User, rawFile: Express.Multer.File) {
-    const filePath = join(rawFile?.destination, rawFile?.filename);
+    const filePath = join(rawFile.destination, rawFile.filename);
     const [err, md5] = await awaitWrap(checkFileHash(filePath));
     if (err) throw err;
     let existFile = await this.findFileByMd5(md5);

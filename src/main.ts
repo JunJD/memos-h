@@ -2,7 +2,7 @@ import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import * as session from 'express-session';
 import * as passport from 'passport';
-import * as fs from 'fs';
+// import * as fs from 'fs';
 
 import { AppModule } from './app.module';
 
@@ -20,11 +20,11 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   // const origins = JSON.parse(process.env.LSC_CORS_ORIGIN)
-  const origins = ['http://localhost:3000', 'https://memos.mahoo12138.cn'];
+  // const origins = ['http://localhost:9090', 'http://127.0.0.1:5500'];
 
   app.enableCors({
-    origin: origins,
-    // "origin": "*",
+    // origin: origins,
+    origin: '*',
     credentials: true,
     // "allowedHeaders":['Authorization','content-type'],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
@@ -36,8 +36,8 @@ async function bootstrap() {
 
   app.use(
     session({
-      secret: 'mahoo12138',
-      name: 'mahoo-session',
+      secret: 'dingjunjie12138',
+      name: 'dingjunjie-session',
       resave: false,
       saveUninitialized: false,
       cookie: { maxAge: 1000 * 3600 * 24 * 30, sameSite: 'none', secure: true },
